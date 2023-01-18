@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>my app</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <style>
+        h1 {
+            text-align: center;
+            margin: 20px;
+        }
+
+        a {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My App</h1>
+        <div class="col" style="text-align: right">
+            <a href="/">logout</a>
+        </div>
+
+        <p>This is a website demonstrating the features of Flask using python language. </p>
+        <p>Flask leverages Jinja2 as its template engine. You are obviously free to use a different template engine, but you still have to install Jinja2 to run Flask itself. This requirement is necessary to enable rich extensions. An extension can depend on Jinja2 being present.</p>
+        <p>This section only gives a very quick introduction into how Jinja2 is integrated into Flask. If you want information on the template engine’s syntax itself, head over to the official Jinja2 Template Documentation for more information.</p>
+
+        <div class="row" style="margin-top: 50px">
+            <div class="col">
+                <h4>Products</h4>
+            </div>
+            <div class="col" style="text-align: right">
+                <a href="/add-product">Add Product</a>
+            </div>
+        </div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>title</th>
+                <th>description</th>
+                <th>price</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for product in products %}
+                <tr>
+                    <td>{{product[0]}}</td>
+                    <td>{{product[1]}}</td>
+                    <td>{{product[2]}}</td>
+                    <td>{{product[3]}}</td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
